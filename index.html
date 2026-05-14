@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Акустика класса | Детализированная памятка по улучшению звука</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Акустика класса | Памятка по улучшению звука</title>
     <style>
+        /* ----- СБРОС И БАЗА ----- */
         * {
             margin: 0;
             padding: 0;
@@ -13,259 +13,304 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: radial-gradient(circle at 10% 20%, #f0f5fa, #e2e9f0);
-            color: #102b3c;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f7fb;
+            color: #1a2c3a;
             line-height: 1.5;
-            scroll-behavior: smooth;
+            padding: 16px 12px;
         }
 
+        /* ----- КОНТЕЙНЕР — АДАПТИВНЫЙ ----- */
         .container {
-            max-width: 1300px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 2rem 1.8rem;
+            width: 100%;
         }
 
-        /* градиентные границы и стекло */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(4px);
-            border-radius: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
-            transition: all 0.25s ease;
-        }
-
-        /* hero */
+        /* ----- ГЕРОЙ (шапка) ----- */
         .hero {
-            background: linear-gradient(125deg, #0e2a3b 0%, #1c4e6e 50%, #22688f 100%);
-            border-radius: 2rem;
-            padding: 2.5rem 2rem;
-            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #0f2b3d 0%, #1b4a6e 100%);
+            border-radius: 28px;
+            padding: 24px 20px;
+            margin-bottom: 24px;
             color: white;
-            box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: "🎧";
-            font-size: 180px;
-            opacity: 0.06;
-            position: absolute;
-            bottom: -20px;
-            right: 0px;
-            pointer-events: none;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.2);
         }
 
         .hero h1 {
-            font-size: 2.6rem;
+            font-size: clamp(1.8rem, 6vw, 2.8rem);
             font-weight: 800;
             letter-spacing: -0.02em;
-            background: linear-gradient(to right, #ffffff, #cfebff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.75rem;
+            margin-bottom: 8px;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.15rem;
-            opacity: 0.88;
+            font-size: clamp(0.95rem, 4vw, 1.1rem);
+            opacity: 0.9;
             max-width: 600px;
         }
 
         .hero-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding-top: 1rem;
+            gap: 12px;
+            margin-top: 20px;
+            padding-top: 12px;
             border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
         }
 
-        /* 3 колонки */
+        /* ----- СЕТКА 3 КОЛОНКИ — ГИБКАЯ ----- */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 1.8rem;
-            margin-bottom: 2.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-bottom: 28px;
         }
 
         .stat-card {
             background: white;
-            border-radius: 1.6rem;
-            padding: 1.6rem;
-            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s;
-            border: 1px solid rgba(0,0,0,0.03);
+            border-radius: 24px;
+            padding: 20px 16px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            border: 1px solid #e9edf2;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 40px -16px rgba(0, 0, 0, 0.18);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 26px -10px rgba(0,0,0,0.12);
         }
 
         .stat-icon {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 12px;
         }
 
         .stat-value {
-            font-size: 2.2rem;
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
             font-weight: 800;
             color: #1b5a7c;
             line-height: 1.2;
+            word-break: break-word;
         }
 
         .stat-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #5c6f87;
-            margin-top: 0.4rem;
-        }
-
-        /* три решения с прогресс-барами */
-        .solutions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.8rem;
-            margin: 2rem 0 2rem;
-        }
-
-        .solution-deep {
-            flex: 1;
-            min-width: 240px;
-            background: white;
-            border-radius: 1.8rem;
-            padding: 1.5rem;
-            box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.08);
-            transition: all 0.25s;
-        }
-
-        .solution-deep:hover {
-            transform: scale(1.02);
-            background: #ffffff;
-            box-shadow: 0 25px 35px -14px rgba(0, 0, 0, 0.15);
-        }
-
-        .progress-wrapper {
-            margin: 1rem 0;
-        }
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        .progress-bar-bg {
-            background: #e2e8f0;
-            border-radius: 40px;
-            height: 8px;
-            overflow: hidden;
-        }
-        .progress-fill {
-            background: #1b5a7c;
-            width: 0%;
-            height: 100%;
-            border-radius: 40px;
-            transition: width 0.4s ease;
+            font-size: 0.8rem;
+            color: #4a627a;
+            margin-top: 8px;
         }
 
         .pill-badge {
             background: #eef2fc;
             color: #1b5a7c;
             border-radius: 40px;
-            padding: 0.2rem 0.7rem;
+            padding: 4px 10px;
             font-size: 0.7rem;
             font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
         }
 
-        /* таблица */
+        /* ----- РЕШЕНИЯ — ГИБКИЙ РЯД ----- */
+        .solutions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0 28px;
+        }
+
+        .solution-deep {
+            flex: 1 1 240px;
+            background: white;
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+
+        .solution-number {
+            background: #1b5a7c;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .progress-wrapper {
+            margin: 16px 0 8px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .progress-bar-bg {
+            background: #e2e8f0;
+            border-radius: 40px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: #1b5a7c;
+            width: 0%;
+            height: 100%;
+            border-radius: 40px;
+        }
+
+        /* ----- ТАБЛИЦА С ГОРИЗОНТАЛЬНОЙ ПРОКРУТКОЙ ----- */
         .table-wrapper {
             background: white;
-            border-radius: 1.8rem;
-            padding: 0.2rem;
-            margin: 2rem 0;
-            box-shadow: 0 12px 28px -12px rgba(0,0,0,0.1);
+            border-radius: 24px;
+            padding: 4px;
+            margin: 24px 0;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         table {
             width: 100%;
+            min-width: 480px;
             border-collapse: collapse;
-            border-radius: 1.8rem;
-            overflow: hidden;
+            font-size: 0.85rem;
         }
 
         th {
             background: #1b4a6e;
             color: white;
-            padding: 14px 12px;
+            padding: 12px 10px;
             font-weight: 600;
-            font-size: 0.9rem;
+            text-align: center;
         }
 
         td {
-            padding: 12px 10px;
+            padding: 10px 8px;
             border-bottom: 1px solid #e7edf4;
             text-align: center;
-            font-size: 0.9rem;
         }
 
         .highlight-row {
             background: #e1f3e8;
             font-weight: 700;
-            border-left: 4px solid #2b7a4b;
         }
 
-        /* ключевой вывод — выделенная цитата */
+        /* ----- ВЫНОСНОЙ БЛОК (цитата) ----- */
         .callout {
             background: linear-gradient(115deg, #e9f0f8, #ffffff);
-            border-radius: 2rem;
-            padding: 1.8rem 2rem;
-            margin: 2rem 0;
-            border-left: 8px solid #1b5a7c;
-            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.05);
+            border-radius: 28px;
+            padding: 20px;
+            margin: 24px 0;
+            border-left: 6px solid #1b5a7c;
         }
 
         .small-badge {
-            background: #1b5a7c15;
+            background: #1b5a7c20;
             color: #1b5a7c;
-            border-radius: 50px;
-            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            padding: 4px 12px;
             font-size: 0.7rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 12px;
         }
 
-        /* простая анимация */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(12px); }
+        /* ----- НИЖНИЕ КАРТОЧКИ (инструкция и нормы) ----- */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            margin: 20px 0 10px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            padding: 18px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+        }
+
+        /* ----- ПОДВАЛ ----- */
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 18px;
+            border-top: 1px solid #cbd5e1;
+            font-size: 0.7rem;
+            color: #466074;
+        }
+
+        /* ----- АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ (ДОПОЛНИТЕЛЬНАЯ) ----- */
+        @media (max-width: 640px) {
+            body {
+                padding: 8px 10px;
+            }
+            .hero {
+                padding: 20px 16px;
+                border-radius: 24px;
+            }
+            .hero-meta {
+                gap: 8px;
+                font-size: 0.7rem;
+            }
+            .stat-card, .solution-deep, .info-card {
+                padding: 16px;
+            }
+            .callout {
+                padding: 16px;
+            }
+            .stat-value {
+                font-size: 1.6rem;
+            }
+            .solution-deep h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Для совсем узких экранов (320px) */
+        @media (max-width: 420px) {
+            .grid-3 {
+                gap: 12px;
+            }
+            .solutions {
+                gap: 12px;
+            }
+            th, td {
+                padding: 8px 4px;
+                font-size: 0.75rem;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .animate {
-            animation: fadeUp 0.45s ease-out forwards;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #cbdbe2;
-            font-size: 0.8rem;
-            color: #466074;
+            animation: fadeIn 0.4s ease-out forwards;
         }
     </style>
 </head>
 <body>
 <div class="container">
+    <!-- ШАПКА -->
     <div class="hero animate">
         <h1>🎧 Как улучшить звук в классе?</h1>
-        <p>Детализированная памятка по акустике школьного кабинета — от теории к измеримым решениям</p>
+        <p>Практическая памятка по акустике школьного кабинета</p>
         <div class="hero-meta">
             <span>📘 Кирилл Юрах, 10 класс</span>
             <span>🏫 МБОУ СОШ №1 с. Некрасовка</span>
@@ -274,19 +319,19 @@
         </div>
     </div>
 
-    <!-- ТРИ ключевых факта -->
+    <!-- ТРИ ГЛАВНЫХ ФАКТА -->
     <div class="grid-3">
         <div class="stat-card">
             <div class="stat-icon">⏱️</div>
             <div class="stat-value">4,2 с</div>
             <div class="stat-label">время реверберации (пустой класс)</div>
-            <div style="margin-top: 0.8rem;"><span class="pill-badge">норма 0,4–0,6 с</span></div>
+            <span class="pill-badge">норма 0,4–0,6 с</span>
         </div>
         <div class="stat-card">
             <div class="stat-icon">🗣️</div>
             <div class="stat-value">20%</div>
-            <div class="stat-label">разборчивость речи на последней парте</div>
-            <div style="margin-top: 0.8rem;"><span class="pill-badge">критически низкая</span></div>
+            <div class="stat-label">разборчивость на последней парте</div>
+            <span class="pill-badge">критически низкая</span>
         </div>
         <div class="stat-card">
             <div class="stat-icon">📐</div>
@@ -295,110 +340,105 @@
         </div>
     </div>
 
-    <!-- ТРИ РЕШЕНИЯ (детализированные прогресс-бары) -->
-    <h2 style="margin: 0.5rem 0 0 0; font-weight: 700;">✅ Три шага к чистой акустике</h2>
+    <!-- ТРИ РЕШЕНИЯ -->
+    <h2 style="margin: 8px 0 4px; font-weight: 700;">✅ Три бюджетных решения</h2>
     <div class="solutions">
         <div class="solution-deep">
-            <div class="solution-number" style="background:#1c5a7a; display:inline-block; width:32px; height:32px; text-align:center; line-height:32px; border-radius:60px; color:white; font-weight:bold;">1</div>
-            <h3 style="margin: 0.8rem 0 0.2rem;">Плотные шторы</h3>
-            <p style="font-size:0.85rem;">Задняя стена, бархат/блэкаут</p>
+            <div class="solution-number">1</div>
+            <h3 style="margin-bottom: 6px;">Плотные шторы</h3>
+            <p style="font-size: 0.85rem;">Задняя стена (бархат, блэкаут)</p>
             <div class="progress-wrapper">
-                <div class="progress-label"><span>RT₆₀ снижение</span><span>4,2с → 2,1с</span></div>
+                <div class="progress-label"><span>RT₆₀</span><span>4,2с → 2,1с</span></div>
                 <div class="progress-bar-bg"><div class="progress-fill" style="width: 48%;"></div></div>
             </div>
-            <div><span class="pill-badge">➕ разборчивость 20% → 50%</span></div>
+            <span class="pill-badge">разборчивость 20% → 50%</span>
         </div>
         <div class="solution-deep">
-            <div class="solution-number" style="background:#1c5a7a; display:inline-block; width:32px; height:32px; text-align:center; line-height:32px; border-radius:60px; color:white; font-weight:bold;">2</div>
-            <h3 style="margin: 0.8rem 0 0.2rem;">Ковёр в проходе</h3>
-            <p style="font-size:0.85rem;">Ворс >6 мм, 15 м²</p>
+            <div class="solution-number">2</div>
+            <h3 style="margin-bottom: 6px;">Ковёр в проходе</h3>
+            <p style="font-size: 0.85rem;">Ворс >6 мм, 15 м²</p>
             <div class="progress-wrapper">
-                <div class="progress-label"><span>RT₆₀ снижение</span><span>2,1с → 1,1с</span></div>
+                <div class="progress-label"><span>RT₆₀</span><span>2,1с → 1,1с</span></div>
                 <div class="progress-bar-bg"><div class="progress-fill" style="width: 74%;"></div></div>
             </div>
-            <div><span class="pill-badge">➕ разборчивость 50% → 70%</span></div>
+            <span class="pill-badge">разборчивость 50% → 70%</span>
         </div>
         <div class="solution-deep">
-            <div class="solution-number" style="background:#1c5a7a; display:inline-block; width:32px; height:32px; text-align:center; line-height:32px; border-radius:60px; color:white; font-weight:bold;">3</div>
-            <h3 style="margin: 0.8rem 0 0.2rem;">25 учеников</h3>
-            <p style="font-size:0.85rem;">+7,5 м² звукопоглощения</p>
+            <div class="solution-number">3</div>
+            <h3 style="margin-bottom: 6px;">25 учеников</h3>
+            <p style="font-size: 0.85rem;">+7,5 м² звукопоглощения</p>
             <div class="progress-wrapper">
-                <div class="progress-label"><span>RT₆₀ снижение</span><span>1,1с → 0,79с</span></div>
+                <div class="progress-label"><span>RT₆₀</span><span>1,1с → 0,79с</span></div>
                 <div class="progress-bar-bg"><div class="progress-fill" style="width: 85%;"></div></div>
             </div>
-            <div><span class="pill-badge">✅ 90% разборчивости</span></div>
+            <span class="pill-badge">✅ 90% разборчивости</span>
         </div>
     </div>
 
-    <!-- ТАБЛИЦА С ПРИРОСТОМ -->
+    <!-- ТАБЛИЦА РЕЗУЛЬТАТОВ -->
     <div class="table-wrapper">
         <table>
-            <thead><tr><th>Состояние класса</th><th>RT₆₀ (измерено)</th><th>Разборчивость речи</th><th>Прирост</th></tr></thead>
+            <thead><tr><th>Состояние класса</th><th>RT₆₀ (измерено)</th><th>Разборчивость</th><th>Прирост</th></tr></thead>
             <tbody>
                 <tr><td>Пустой класс</td><td>4,2 с</td><td>20%</td><td>—</td></tr>
                 <tr><td>+ шторы на заднюю стену</td><td>2,1 с</td><td>50%</td><td>+30%</td></tr>
                 <tr><td>+ ковёр в проходе</td><td>1,1 с</td><td>70%</td><td>+20%</td></tr>
-                <tr class="highlight-row"><td>+ 25 учеников (полный класс)</td><td><strong>0,79 с</strong></td><td><strong>90%</strong></td><td><strong>+20%</strong></td></tr>
+                <tr class="highlight-row"><td><strong>+ 25 учеников (полный класс)</strong></td><td><strong>0,79 с</strong></td><td><strong>90%</strong></td><td><strong>+20%</strong></td></tr>
             </tbody>
         </table>
     </div>
 
-    <!-- ВЫВОД  (детализированный)-->
+    <!-- ВЫВОД -->
     <div class="callout">
         <div class="small-badge">🔬 экспериментально подтверждено</div>
-        <h3 style="margin-bottom: 0.75rem;">🎯 Гипотеза подтверждена: звук можно улучшить без ремонта</h3>
-        <p style="margin-bottom: 1rem;">Добавление <strong>штор, ковра и учёт присутствия учеников</strong> снижает время реверберации с 4,2 с до 0,79 с и повышает разборчивость речи на последней парте <strong>с 20% до 90%</strong>. Погрешность расчётов по формуле Сэбина — менее 6%.</p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <span class="pill-badge">📏 объём класса 134,4 м³</span>
-            <span class="pill-badge">🧮 A₁ = 5,02 м² → A₄ = 27,5 м²</span>
+        <h3 style="margin-bottom: 8px;">🎯 Гипотеза подтверждена</h3>
+        <p style="margin-bottom: 12px;">Добавление штор, ковра и учёт присутствия учеников снижает время реверберации с <strong>4,2 с до 0,79 с</strong> и повышает разборчивость речи на последней парте с <strong>20% до 90%</strong>.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="pill-badge">📏 объём 134,4 м³</span>
             <span class="pill-badge">📱 измерено через Fingertools</span>
         </div>
     </div>
 
-    <!-- ДОПОЛНИТЕЛЬНЫЙ БЛОК: КАК ПРОВЕРИТЬ САМОСТОЯТЕЛЬНО -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1.5rem; margin: 1rem 0;">
-        <div class="stat-card" style="background: white;">
+    <!-- ДОПОЛНИТЕЛЬНЫЙ БЛОК -->
+    <div class="bottom-grid">
+        <div class="info-card">
             <div class="stat-icon">📱</div>
-            <h3 style="margin: 0.25rem 0 0.5rem;">Измерь сам</h3>
-            <p style="font-size: 0.85rem;">Установи Fingertools, хлопни шариком или в ладоши — приложение покажет RT₆₀. Сравни с нормой 0,4–0,6 с.</p>
+            <h3 style="margin: 8px 0 6px;">Как проверить свой класс?</h3>
+            <p style="font-size: 0.85rem;">Установи Fingertools, хлопни в ладоши или лопни шарик — приложение покажет RT₆₀. Сравни с нормой 0,4–0,6 с.</p>
         </div>
-        <div class="stat-card" style="background: white;">
+        <div class="info-card">
             <div class="stat-icon">🧱</div>
-            <h3 style="margin: 0.25rem 0 0.5rem;">Что даёт эффект?</h3>
-            <p style="font-size: 0.85rem;">Текстиль, мягкие стенды, ковролин, ученики в свитерах — работают как естественные поглотители.</p>
+            <h3 style="margin: 8px 0 6px;">Что работает?</h3>
+            <p style="font-size: 0.85rem;">Текстиль, ковролин, мягкие стенды, плотные шторы, ученики в свитерах — всё это естественные звукопоглотители.</p>
         </div>
-        <div class="stat-card" style="background: white;">
+        <div class="info-card">
             <div class="stat-icon">📚</div>
-            <h3 style="margin: 0.25rem 0 0.5rem;">Нормативная база</h3>
-            <p style="font-size: 0.85rem;">СанПиН, ISO, рекомендации акустической физики: RT₆₀ 0,4–0,6 с, разборчивость STI ≥0,65.</p>
+            <h3 style="margin: 8px 0 6px;">Нормативы</h3>
+            <p style="font-size: 0.85rem;">СанПиН и ISO требуют RT₆₀ 0,4–0,6 с. Разборчивость речи должна быть не ниже 65%.</p>
         </div>
     </div>
 
-    <footer>
-        🌟 Акустический комфорт — не роскошь, а условие здоровьесбережения и доступного качественного образования.<br>
+    <div class="footer">
+        🌟 Акустический комфорт — не роскошь, а условие здоровьесбережения и качественного образования.<br>
         Проект по физике «Акустика помещений: как улучшить звук в классе» | Кирилл Юрах, 2026
-    </footer>
+    </div>
 </div>
 
 <script>
-    // просто небольшая анимация прогресс-баров при скролле (доп. детализация)
-    const progressBars = document.querySelectorAll('.progress-fill');
+    // анимация прогресс-баров (работает на телефоне)
+    const fills = document.querySelectorAll('.progress-fill');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const width = entry.target.style.width;
-                if (width === '0%') entry.target.style.width = entry.target.dataset.finalWidth || '70%';
+                if (width === '0%' || width === '0px') {
+                    // ничего не делаем, ширина уже задана в стилях
+                }
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
-    progressBars.forEach(bar => {
-        if (bar.style.width && bar.style.width !== '0%') return;
-        bar.dataset.finalWidth = bar.style.width;
-        bar.style.width = '0%';
-        observer.observe(bar);
-        setTimeout(() => { if (bar.style.width === '0%') bar.style.width = bar.dataset.finalWidth || '70%'; }, 100);
-    });
+    fills.forEach(fill => observer.observe(fill));
 </script>
 </body>
 </html>
