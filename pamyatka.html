@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как улучшить звук в классе | Памятка по акустике</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f4f8;
+            color: #1a2a3a;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* карточка-памятка */
+        .card {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2b4c7c);
+            color: white;
+            padding: 2rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .author {
+            background: #e9f0f9;
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #1e3c72;
+            font-weight: 500;
+            border-bottom: 1px solid #cbdde9;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-box {
+            background: #f8fafd;
+            border-left: 5px solid #2b4c7c;
+            padding: 1rem 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .info-box h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge {
+            background: #2b4c7c;
+            color: white;
+            border-radius: 40px;
+            padding: 0.2rem 0.7rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .step {
+            background: white;
+            border: 1px solid #dfe8f0;
+            border-radius: 28px;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            border-color: #7fa1c3;
+        }
+
+        .step-number {
+            background: #1e3c72;
+            color: white;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+            background: #f8fafd;
+            border-radius: 24px;
+            padding: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #1e3c72;
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        td {
+            border-bottom: 1px solid #cbdde9;
+            padding: 10px 8px;
+            text-align: center;
+        }
+
+        .highlight {
+            background
+
+
+: #e6f2e6;
+            font-weight: bold;
+        }
+
+        .conclusion {
+            background: #eef2fa;
+            border-radius: 28px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-left: 8px solid #2b7a4b;
+        }
+
+        .formula {
+            font-family: monospace;
+            background: #eef2f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 1rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #5e7a93;
+            border-top: 1px solid #cbdde9;
+            margin-top: 1rem;
+        }
+
+        max-width: 700px {
+            .content {
+                padding: 1.5rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <h1>🎧 Как улучшить звук в классе?</h1>
+            <p>Практическая памятка по акустике школьного кабинета</p>
+        </div>
+        <div class="author">
+            📘 Кирилл Юрах, 10 класс • МБОУ СОШ №1 с. Некрасовка • 2026 г.
+        </div>
+        <div class="content">
+
+            <!-- ПРОБЛЕМА -->
+            <div class="problem-grid">
+                <div class="info-box">
+                    <h3>⚠️ Проблема</h3>
+                    <p>В типичном классе <strong>время реверберации достигает 4,2 секунды</strong> при норме <strong>0,4–0,6 с</strong>. Разборчивость речи на последней парте — всего <strong>20%</strong>.</p>
+                </div>
+                <div class="info-box">
+                    <h3>📉 Последствия</h3>
+                    <p>• Речь учителя «размазывается»
+• Быстрая утомляемость
+• Падение внимания через 15 минут
+• Снижение успеваемости</p>
+                </div>
+                <div class="info-box">
+                    <h3>🧪 Формула Сэбина</h3>
+                    <p><span class="formula">T₆₀ = 0,163 × V / A</span>
+V — объём класса (м³)
+A — общее звукопоглощение (м²)</p>
+                </div>
+            </div>
+
+            <!-- 3 ГЛАВНЫХ РЕШЕНИЯ -->
+            <h2 style="margin: 1rem 0 0 0;">✅ Три бюджетных решения</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Плотные шторы</h3>
+                    <p>На заднюю стену (ткань, бархат, блэкаут).</p>
+                    <p><strong>Эффект:</strong> RT₆₀ 4,2 с → 2,1 с
+Разборчивость: 20% → 50%</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Ковёр в проходе</h3>
+                    <p>Ковролин с ворсом >6 мм.</p>
+                    <p><strong>Эффект:</strong> RT₆₀ 2,1 с → 1,1 с
+Разборчивость: 50% → 70%</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Ученики = звукопоглотители</h3>
+                    <p>25 человек дают ≈ 7,5 м² поглощения.</p>
+                    <p><strong>Эффект:</strong> RT₆₀ 1,1 с → 0,79 с
+Разборчивость: 70% → 90% ✅</p>
+                </div>
+            </div>
+
+            <!-- ТАБЛИЦА РЕЗУЛЬТАТОВ -->
+            <h2>📊 Результаты эксперимента</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Состояние класса</th><th>RT₆₀ (измерено)</th><th>Разборчивость речи</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Пустой класс</td><td>4,2 с</td><td>20% (2 из 10 слов)</td></tr>
+                        <tr><td>+ шторы на заднюю стену</td><td>2,1 с</td><td>50% (5 из 10)</td></tr>
+                        <tr><td>+ ковёр в проходе</td><td>1,1 с</td><td>70% (7 из 10)</td></tr>
+                        <tr class="highlight"><td>+ 25 учеников (полный класс)</td><td><strong>0,79 с
+
+
+</strong></td><td><strong>90% (9 из 10)</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ВЫВОД -->
+            <div class="conclusion">
+                <h3>🎯 Главный вывод проекта</h3>
+                <p>Добавление <strong>штор и ковра</strong> + учёт присутствия учеников снижает время реверберации <strong>с 4,2 с до 0,79 с</strong> и повышает разборчивость речи <strong>с 20% до 90%</strong>. Формула Сэбина подтверждена (погрешность <6%).</p>
+                <p style="margin-top: 10px;">💡 <strong>Рекомендация:</strong> даже без капремонта каждая школа может улучшить акустику класса за 1–2 дня. Проверить свой класс можно смартфоном (Fingertools) + хлопком шарика.</p>
+                <p style="margin-top: 8px;">📌 <em>Акустический комфорт — не роскошь, а условие здоровьесбережения и доступного образования.</em></p>
+            </div>
+
+            <!-- БОНУС: КАК ИЗМЕРИТЬ -->
+            <div class="info-box" style="margin-top: 1.5rem; background:#eef2fa;">
+                <h3>📱 Как проверить свой класс самостоятельно?</h3>
+                <p>1. Установи приложение <strong>Fingertools</strong> (или любое с измерением RT60).
+
+                2. Лопни воздушный шарик или хлопни в ладоши.
+
+                3. Приложение покажет время реверберации.
+
+                4. Сравни с нормой 0,4–0,6 с.</p>
+            </div>
+
+            <div class="footer">
+                Проект по физике «Акустика помещений» | Руководитель: Обдымко Н.А.
+
+                Гипотеза подтверждена: мягкие поверхности + ученики закономерно улучшают звук в классе.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
